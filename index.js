@@ -11,6 +11,14 @@ const tutorials = [
   'what is JSONP?'
 ];
 
-const titleCased = () => {
-  return tutorials
-}
+function titleCased(){
+  return tutorials.map(sentence => {
+     const splitedSentence = sentence.split(" ") // [ 'what', 'does', 'the', 'this', 'keyword', 'mean?' ]
+    const capitalized = splitedSentence.map(word => {
+      return word.charAt(0).toUpperCase()+word.slice(1) // [ 'What', 'Does', 'The', 'This', 'Keyword', 'Mean?' ]
+    })
+    return capitalized.join(" "); // "What Does The This KeyBoard Mean?"
+  })}
+
+
+
